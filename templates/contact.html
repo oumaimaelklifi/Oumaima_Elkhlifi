@@ -1,0 +1,93 @@
+{% load static %}
+
+<heaD>
+    <!-- Include AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        *{ font-family: 'Poppins';
+
+        }
+        footer {
+            background-color: #021640;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+        }
+        .contact_me h2{
+            font-weight: 900;
+        }
+        i{
+            font-size: 30px;
+            
+        }
+
+       
+        input ,textarea{
+            width: 350px;
+            border: 1px solid rgb(168, 168, 168);
+            border-radius: 5px;
+            padding: 10px;
+            height: 50px;
+            margin-bottom: 12px;
+        }
+        input::placeholder{
+            color: gray;
+        }
+        textarea{
+            height: 100px;
+        }
+        .envoyer{
+            background-color: white;
+            width: 130px;
+            color: #021640;
+         
+            border-radius: 5px 5px 24px 5px;
+        }
+       
+    </style>
+</heaD>
+
+<body>
+    <footer>
+        <div class="contact_me text-center mb-5 mt-5 font-black">
+            <h2 data-aos="fade-down" class="aos-animate aos-init" >Contact me </h2>
+            <h2  class="touch aos-animate aos-init"  data-aos="fade-down">LET'S GET IN TOUCH</h2>
+        </div>
+        <div class="contact mt-2 d-flex gap-10 justify-center" id="contact" >
+
+            
+          
+            <form  class="champs d-flex flex-column  p-1" data-aos="fade-up" method="post">
+                {% csrf_token %}
+        
+                <input type="text" name="name" placeholder="Name" class="focus:outline-none aos-animate aos-init" data-aos="fade-up">
+                <input type="email" name="email" placeholder="Email" class="focus:outline-none aos-animate aos-init"data-aos="fade-up">
+                <textarea name="Message" placeholder="Message" class="focus:outline-none aos-animate aos-init" data-aos="fade-up"></textarea>
+                <button type="submit" class="border-1 border-none  p-2 envoyer  font-bold  " >Submit</button>
+         
+            </form>
+        
+
+           <div class="conatct_information  aos-animate aos-init" data-aos="fade-up">
+          
+                <p  class="" > <i class="fab fa-github"></i> oumaimaelkhlifi2003@gmail.com</p>
+                
+                <p class="mb-3 "  ><i class="fab fa-github"></i> +212 625162443</p>
+                
+                <p class=""  ><i class="fab fa-github"></i> oumaimaelkhlifi</p>
+     
+                <p  class="" ><i class="fab fa-linkedin"></i> oumaimaelkhlifi</p>
+
+           </div>
+           
+        </div>
+       
+
+    </footer> 
+    <script>
+  
+        AOS.init();
+    </script>
+</body>
+</html>
